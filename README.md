@@ -10,6 +10,10 @@ NFC, near field communication, is a type of wireless communication protocol that
 
 We have designed an architecture that utilizes an NFC device, which is comprised of IR LEDs and IR receivers and hosted on an ESP. To solve the provisioning problem, we are using a Raspberry Pi (RPi) with a camera to decode a local QR code with the scooter ID (SID). The flow is initiated by a button press on the fob, which communicates to the scooter (and RPi) to start the process. The scooter then expects to receive a key from the Auth server. The RPi is triggered to decode the SID from the QR code and then send this along with its fob ID (FIB) to the Auth Server. The authentication server validates the FIB and SID pair and then creates a random key that is sent back to the fob and to the scooter via separate messages. Upon receiving the key, the fob indicates, via LED, that it is ready to communicate the key to the scooter. On button press, the FIB and key are sent to the scooter, which compares the keys sent via different paths. If they match, the scooter indicates success via LED.
 
+### Supporting Artifacts
+- [Link to video technical presentation](https://drive.google.com/file/d/1wr9SW5AOvmGvePvcKLIu-ERTd6OCRgOA/view?usp=sharing). Not to exceed 120s
+- [Link to video demo](https://drive.google.com/file/d/167HEl0m1cnsbCQHSr_LFSs0hiYsIl1-V/view?usp=sharing). Not to exceed 120s
+
 ### Self-Assessment 
 
 | Objective Criterion | Rating | Max Value  | 
@@ -57,10 +61,6 @@ Another way to potentially hack the system could be to clone a fob. This could a
 <img width="688" alt="Screen Shot 2023-04-21 at 5 53 53 PM" src="https://user-images.githubusercontent.com/47408944/233740399-c86042aa-0c10-4942-a4ec-5aa7e66ef1da.png">
 
 <img width="1325" alt="Screen Shot 2023-04-21 at 12 34 25 PM" src="https://user-images.githubusercontent.com/47408944/233688773-ce4ff568-60c1-47a3-b56d-e845039cff52.png">
-
-### Supporting Artifacts
-- [Link to video technical presentation](https://drive.google.com/file/d/1wr9SW5AOvmGvePvcKLIu-ERTd6OCRgOA/view?usp=sharing). Not to exceed 120s
-- [Link to video demo](https://drive.google.com/file/d/167HEl0m1cnsbCQHSr_LFSs0hiYsIl1-V/view?usp=sharing). Not to exceed 120s
 
 
 ### Modules, Tools, Source Used Including Attribution
